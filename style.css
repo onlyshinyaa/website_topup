@@ -1,0 +1,686 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    padding-top: 76px;
+    background-color: #66cdaa;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(Fanny\ Blade\ of\ Kibou.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    color: rgb(255, 204, 0);
+    position: relative;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-section p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.hero-buttons .btn {
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    background-color: rgba(33, 37, 41, 0.95) !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ffc107;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Promo Cards */
+.promo-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.promo-card:hover::before {
+    left: 100%;
+}
+
+.promo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.promo-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.promo-icon img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Game Cards */
+.game-card {
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s cubic-bezier(0.4,0,0.2,1);
+    background: #fff;
+}
+
+.game-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+}
+
+.game-card .card-img-wrapper {
+    position: relative;
+    border-radius: 22px 22px 0 0;
+    overflow: hidden;
+    height: 220px;
+}
+
+.game-card .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 22px 22px 0 0;
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.game-card:hover .card-img-top {
+    transform: scale(1.06);
+}
+
+/* Gradient overlay for text readability */
+.game-card .card-img-overlay {
+    position: absolute;
+    left: 0; right: 0; bottom: 0; top: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.08) 40%, rgba(0,0,0,0.75) 100%);
+    border-radius: 22px 22px 0 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 0;
+}
+
+.game-overlay {
+    width: 100%;
+    padding: 24px 20px 18px 20px;
+}
+
+.game-overlay .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.game-overlay .card-text {
+    font-size: 1.08rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.13);
+}
+
+/* Badge styling */
+.game-features {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.1rem;
+}
+
+.game-features .badge {
+    font-size: 1rem;
+    padding: 0.45em 1em;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+/* Button styling */
+.game-card .btn {
+    font-size: 1.18rem;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 0.85em 0;
+    transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: 0 2px 12px rgba(255,193,7,0.10);
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.game-card .btn i {
+    font-size: 1.3em;
+}
+
+.game-card .btn:hover {
+    background: #ffb300;
+    color: #222;
+    transform: scale(1.04);
+    box-shadow: 0 6px 24px rgba(255,193,7,0.18);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .game-card .card-img-wrapper {
+        height: 180px;
+    }
+}
+
+@media (max-width: 767px) {
+    .game-card .card-img-wrapper {
+        height: 140px;
+    }
+    .game-overlay {
+        padding: 14px 10px 10px 10px;
+    }
+    .game-card .btn {
+        font-size: 1rem;
+        padding: 0.7em 0;
+    }
+}
+
+/* Feature Cards */
+.feature-card {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.feature-card i {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover i {
+    transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #212529 0%, #343a40 100%);
+}
+
+.social-links a {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: #ffc107 !important;
+}
+
+.contact-info a {
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #ffc107 !important;
+}
+
+.contact-buttons .btn {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.contact-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Back to Top Button */
+#backToTop {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#backToTop:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Animation Classes */
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+.animate-in {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced hover effects */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 80vh;
+        background-attachment: scroll;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .promo-card,
+    .game-card {
+        margin-bottom: 20px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
+    .display-5 {
+        font-size: 2rem;
+    }
+    
+    .btn-lg {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.loading.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form Hero Section */
+.form-hero-section {
+    min-height: 220px;
+    background: linear-gradient(120deg, rgba(106,17,203,0.7) 0%, rgba(46,0,102,0.7) 100%), url('Fanny Blade of Kibou.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 56px;
+    animation: fadeInHero 1.2s ease;
+}
+@keyframes fadeInHero {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.form-hero-section h1, .form-hero-section p {
+    animation: fadeInUp 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+.form-hero-section h1 {
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.form-hero-section p {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Form Card */
+.form-card {
+    border-radius: 22px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(255,255,255,0.22);
+    transition: box-shadow 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    animation: fadeInUp 1.1s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.form-card:hover {
+    box-shadow: 0 16px 48px rgba(106,17,203,0.18);
+    transform: translateY(-4px) scale(1.01);
+}
+
+.form-card .card-header.bg-gradient {
+    background: linear-gradient(90deg, #6a11cb 0%, #2e0066 100%);
+    color: #fff;
+    border-radius: 22px 22px 0 0;
+    box-shadow: 0 2px 12px rgba(106,17,203,0.10);
+    border-bottom: 1px solid rgba(255,255,255,0.13);
+    backdrop-filter: blur(8px);
+}
+
+.form-card .card-header h3 {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.form-card .card-body {
+    background: transparent;
+    border-radius: 0 0 22px 22px;
+}
+
+/* Input Modern */
+.form-card .form-control, .form-card .form-select {
+    border-radius: 12px;
+    font-size: 1.13rem;
+    padding: 0.9em 1.1em;
+    box-shadow: 0 2px 8px rgba(106,17,203,0.04);
+    background: rgba(255,255,255,0.7);
+    border: 1.5px solid rgba(106,17,203,0.13);
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.form-card .form-control:focus, .form-card .form-select:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 0 2px #b39ddb;
+    background: #fff;
+}
+.input-group-text {
+    border-radius: 12px 0 0 12px;
+    background: #f3eaff;
+    border: 1.5px solid rgba(106,17,203,0.13);
+}
+
+/* Payment Method Card */
+.payment-method-card {
+    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0,0.2,1);
+    border-radius: 14px;
+}
+.payment-method-card .btn {
+    border-radius: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.payment-method-card .btn-check:checked + .btn, .payment-method-card .btn:hover {
+    background: #ffb300;
+    color: #222;
+    box-shadow: 0 4px 16px rgba(255,193,7,0.13);
+}
+
+/* Order Summary Glass */
+#orderSummary {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    background: rgba(255,255,255,0.32);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(106,17,203,0.07);
+    padding: 1.2em 1em;
+    margin-bottom: 0.5em;
+    border: 1.2px solid rgba(106,17,203,0.10);
+}
+
+/* Button Gradient & Animasi */
+.form-card .btn-warning,
+.form-card .btn-warning:hover {
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    border: none;
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(106,17,203,0.10);
+    transition: background 0.22s, color 0.22s, box-shadow 0.22s, transform 0.22s;
+}
+.form-card .btn-warning:hover {
+    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+    color: #fff;
+    transform: scale(1.04);
+    box-shadow: 0 6px 24px rgba(106,17,203,0.18);
+}
+.form-card .btn-outline-secondary:hover {
+    background: #eee;
+    color: #222;
+}
+
+/* Ripple Effect */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    background: rgba(255,193,7,0.25);
+    pointer-events: none;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    z-index: 1;
+}
+@keyframes ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Feature Icons */
+.feature-icon {
+    transition: all 0.3s ease;
+}
+
+.feature-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffc107;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e0a800;
+}
+
+/* Smooth transition untuk card dan tombol */
+.card, .btn, .feature-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover, .feature-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* Animasi bounce untuk scroll indicator */
+.animate-bounce {
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.contact-buttons img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Responsive improvement */
+@media (max-width: 991px) {
+    .form-card {
+        padding: 0;
+    }
+    .form-card .card-body {
+        padding: 2rem 1.2rem;
+    }
+}
+@media (max-width: 767px) {
+    .form-card {
+        border-radius: 14px;
+    }
+    .form-card .card-header.bg-gradient {
+        border-radius: 14px 14px 0 0;
+    }
+    .form-card .card-body {
+        border-radius: 0 0 14px 14px;
+        padding: 1.2rem 0.7rem;
+    }
+    .form-hero-section {
+        min-height: 120px;
+        padding: 1.2rem 0.5rem;
+    }
+    #orderSummary {
+        padding: 0.7em 0.5em;
+    }
+}  

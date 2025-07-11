@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameTopUp - Top Up Game Online Terpercaya</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-gamepad me-2"></i>TopUpGame
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">
+                            <i class="fas fa-home me-1"></i>Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#promo">
+                            <i class="fas fa-gift me-1"></i>Promo
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#games">
+                            <i class="fas fa-dice me-1"></i>Games
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Form.html">
+                            <i class="fas fa-credit-card me-1"></i>Top Up
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container text-center">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="display-3 fw-bold mb-4">
+                    <span class="text-warning">Top Up</span> Game Favoritmu
+                </h1>
+                <p class="lead mb-4 fs-4">Cepat, Aman, dan Terpercaya dengan Harga Terbaik</p>
+                <div class="hero-buttons">
+                    <a href="#games" class="btn btn-warning btn-lg me-3 mb-2">
+                        <i class="fas fa-play me-2"></i>Mulai Top Up
+                    </a>
+                    <a href="#promo" class="btn btn-outline-warning btn-lg mb-2">
+                        <i class="fas fa-gift me-2"></i>Lihat Promo
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <a href="#promo" class="text-warning">
+                <i class="fas fa-chevron-down fa-2x animate-bounce"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section id="promo" class="py-5 bg-dark">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold text-warning mb-3">
+                    <i class="fas fa-fire me-2"></i>PROMO EKSLUSIF
+                </h2>
+                <p class="text-light fs-5">Dapatkan bonus dan diskon menarik untuk setiap top up</p>
+            </div>
+            <div class="row g-4">
+                <!-- Promo Card 1 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card promo-card h-100 border-0 shadow-lg promo-clickable" onclick="promoClick('Promo WDP 3X')">
+                        <div class="card-body d-flex align-items-center p-4">
+                            <div class="promo-icon me-3">
+                                <img src="dm.png" class="img-fluid" style="width: 60px; height: 60px;" alt="Diamond">
+                            </div>
+                            <div class="promo-content">
+                                <h6 class="fw-bold text-primary mb-2">Promo WDP 3X</h6>
+                                <p class="mb-1 text-muted">Mulai Dari</p>
+                                <span class="fw-bold fs-5 text-success">Rp.25.000</span>
+                            </div>
+                            <div class="promo-badge">
+                                <span class="badge bg-danger">HOT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Promo Card 2 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card promo-card h-100 border-0 shadow-lg promo-clickable" onclick="promoClick('Promo WDP 5X')">
+                        <div class="card-body d-flex align-items-center p-4">
+                            <div class="promo-icon me-3">
+                                <img src="dm.png" class="img-fluid" style="width: 60px; height: 60px;" alt="Diamond">
+                            </div>
+                            <div class="promo-content">
+                                <h6 class="fw-bold text-primary mb-2">Promo WDP 5X</h6>
+                                <p class="mb-1 text-muted">Mulai Dari</p>
+                                <span class="fw-bold fs-5 text-success">Rp.75.000</span>
+                            </div>
+                            <div class="promo-badge">
+                                <span class="badge bg-warning text-dark">POPULAR</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Promo Card 3 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card promo-card h-100 border-0 shadow-lg promo-clickable" onclick="promoClick('Promo Event')">
+                        <div class="card-body d-flex align-items-center p-4">
+                            <div class="promo-icon me-3">
+                                <img src="dm.png" class="img-fluid" style="width: 60px; height: 60px;" alt="Diamond">
+                            </div>
+                            <div class="promo-content">
+                                <h6 class="fw-bold text-primary mb-2">Promo Event</h6>
+                                <p class="mb-1 text-muted">Promo 568</p>
+                                <span class="fw-bold fs-5 text-success">503+65 Bonus</span>
+                            </div>
+                            <div class="promo-badge">
+                                <span class="badge bg-info">NEW</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Promo Card 4 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card promo-card h-100 border-0 shadow-lg promo-clickable" onclick="promoClick('Promo Recharge')">
+                        <div class="card-body d-flex align-items-center p-4">
+                            <div class="promo-icon me-3">
+                                <img src="dm.png" class="img-fluid" style="width: 60px; height: 60px;" alt="Diamond">
+                            </div>
+                            <div class="promo-content">
+                                <h6 class="fw-bold text-primary mb-2">Promo Recharge</h6>
+                                <p class="mb-1 text-muted">Bonus Spesial</p>
+                                <span class="fw-bold fs-5 text-success">Top Up 50%</span>
+                            </div>
+                            <div class="promo-badge">
+                                <span class="badge bg-success">BEST</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold text-white mb-3">
+                    <i class="fas fa-gamepad me-2"></i>Pilih Game Favoritmu
+                </h2>
+            </div>
+            <div class="row g-4">
+                <!-- Mobile Legends -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card game-card h-100 border-0 shadow-lg">
+                        <div class="card-img-wrapper">
+                            <img src="the aspirants.jpg" class="card-img-top" alt="Mobile Legends">
+                            <div class="card-img-overlay d-flex align-items-end">
+                                <div class="game-overlay">
+                                    <h5 class="card-title text-white fw-bold">Mobile Legends</h5>
+                                    <p class="card-text text-light">Top up Diamond dengan harga termurah</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="game-features mb-3">
+                                <span class="badge bg-primary me-2">Diamond</span>
+                                <span class="badge bg-success me-2">Instant</span>
+                                <span class="badge bg-warning text-dark">Promo</span>
+                            </div>
+                            <button class="btn btn-warning btn-lg w-100" onclick="selectGame('Mobile Legends')">
+                                <i class="fas fa-play me-2"></i>Top Up Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wuthering Waves -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card game-card h-100 border-0 shadow-lg">
+                        <div class="card-img-wrapper">
+                            <img src="cartethyia.avif" class="card-img-top" alt="Wuthering Waves">
+                            <div class="card-img-overlay d-flex align-items-end">
+                                <div class="game-overlay">
+                                    <h5 class="card-title text-white fw-bold">Wuthering Waves</h5>
+                                    <p class="card-text text-light">Top up Lunite dengan harga termurah</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="game-features mb-3">
+                                <span class="badge bg-primary me-2">Lunite</span>
+                                <span class="badge bg-success me-2">Instant</span>
+                                <span class="badge bg-info">New</span>
+                            </div>
+                            <button class="btn btn-warning btn-lg w-100" onclick="selectGame('Wuthering Waves')">
+                                <i class="fas fa-play me-2"></i>Top Up Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Genshin Impact -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card game-card h-100 border-0 shadow-lg">
+                        <div class="card-img-wrapper">
+                            <img src="skirk.png" class="card-img-top" alt="Genshin Impact">
+                            <div class="card-img-overlay d-flex align-items-end">
+                                <div class="game-overlay">
+                                    <h5 class="card-title text-white fw-bold">Genshin Impact</h5>
+                                    <p class="card-text text-light">Top up Crystals dengan harga termurah</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="game-features mb-3">
+                                <span class="badge bg-primary me-2">Crystals</span>
+                                <span class="badge bg-success me-2">Instant</span>
+                                <span class="badge bg-danger">Hot</span>
+                            </div>
+                            <button class="btn btn-warning btn-lg w-100" onclick="selectGame('Genshin Impact')">
+                                <i class="fas fa-play me-2"></i>Top Up Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- HOK -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card game-card h-100 border-0 shadow-lg">
+                        <div class="card-img-wrapper">
+                            <img src="honor of kings.png" class="card-img-top" alt="HOK">
+                            <div class="card-img-overlay d-flex align-items-end">
+                                <div class="game-overlay">
+                                    <h5 class="card-title text-white fw-bold">Honor of Kings</h5>
+                                    <p class="card-text text-light">Top up Tokens dengan harga termurah</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="game-features mb-3">
+                                <span class="badge bg-primary me-2">Tokens</span>
+                                <span class="badge bg-success me-2">Instant</span>
+                                <span class="badge bg-warning text-dark">Promo</span>
+                            </div>
+                            <button class="btn btn-warning btn-lg w-100" onclick="selectGame('HOK')">
+                                <i class="fas fa-play me-2"></i>Top Up Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Valorant -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card game-card h-100 border-0 shadow-lg">
+                        <div class="card-img-wrapper">
+                            <img src="valorant.jpg" class="card-img-top" alt="Valorant">
+                            <div class="card-img-overlay d-flex align-items-end">
+                                <div class="game-overlay">
+                                    <h5 class="card-title text-white fw-bold">Valorant</h5>
+                                    <p class="card-text text-light">Top up VP dengan harga termurah</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="game-features mb-3">
+                                <span class="badge bg-danger me-2">VP</span>
+                                <span class="badge bg-success me-2">Instant</span>
+                                <span class="badge bg-warning text-dark">Promo</span>
+                            </div>
+                            <button class="btn btn-warning btn-lg w-100" onclick="selectGame('Valorant')">
+                                <i class="fas fa-play me-2"></i>Top Up Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dota 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card game-card h-100 border-0 shadow-lg">
+                        <div class="card-img-wrapper">
+                            <img src="Dota 2.jpg" class="card-img-top" alt="Dota 2">
+                            <div class="card-img-overlay d-flex align-items-end">
+                                <div class="game-overlay">
+                                    <h5 class="card-title text-white fw-bold">Dota 2</h5>
+                                    <p class="card-text text-light">Top up Dota Plus dengan harga termurah</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="game-features mb-3">
+                                <span class="badge bg-dark me-2">Dota Plus</span>
+                                <span class="badge bg-success me-2">Instant</span>
+                                <span class="badge bg-warning text-dark">Promo</span>
+                            </div>
+                            <button class="btn btn-warning btn-lg w-100" onclick="selectGame('Dota 2')">
+                                <i class="fas fa-play me-2"></i>Top Up Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h3 class="text-warning fw-bold mb-4">Apa itu Top Up dan Bagaimana Cara Kerjanya?</h3>
+                    <p class="text-light fs-5 mb-4">Jutaan gamer mempercayai kami setiap bulan untuk pengalaman pembelian yang mulus saat membeli item dan mata uang dalam game. Dengan top up langsung, kami bermitra langsung dengan publisher favorit Anda sehingga pembelian ditambahkan ke akun game Anda secara instan.</p>
+                    <p class="text-light fs-5">Cukup masukkan Game ID dan Server Anda, dan Anda siap untuk bermain!</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="feature-card text-center p-4 bg-light rounded shadow">
+                                <i class="fas fa-bolt fa-2x text-warning mb-3"></i>
+                                <h6 class="fw-bold">Easy and Fast</h6>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="feature-card text-center p-4 bg-light rounded shadow">
+                                <i class="fas fa-gift fa-2x text-warning mb-3"></i>
+                                <h6 class="fw-bold">Quick Gifting</h6>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="feature-card text-center p-4 bg-light rounded shadow">
+                                <i class="fas fa-headset fa-2x text-warning mb-3"></i>
+                                <h6 class="fw-bold">24/7 Support</h6>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="feature-card text-center p-4 bg-light rounded shadow">
+                                <i class="fas fa-rocket fa-2x text-warning mb-3"></i>
+                                <h6 class="fw-bold">Instant Delivery</h6>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="feature-card text-center p-4 bg-light rounded shadow">
+                                <i class="fas fa-shield-alt fa-2x text-warning mb-3"></i>
+                                <h6 class="fw-bold">Secure Payment</h6>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="feature-card text-center p-4 bg-light rounded shadow">
+                                <i class="fas fa-percentage fa-2x text-warning mb-3"></i>
+                                <h6 class="fw-bold">Exclusive Promos</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-gamepad me-2 text-warning"></i>TopUpGame
+                    </h5>
+                    <p class="text-light">Platform Top Up Game Online Terpercaya Di Indonesia dengan pelayanan 24/7 dan harga termurah.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-warning me-3 fs-4"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">Kontak Kami</h5>
+                    <div class="contact-info">
+                        <p class="mb-2">
+                            <i class="fas fa-envelope me-2 text-warning"></i>
+                            <a href="mailto:Sanzguh21@gmail.com" class="text-light text-decoration-none">Sanzguh21@gmail.com</a>
+                        </p>
+                        <p class="mb-2">
+                            <i class="fab fa-whatsapp me-2 text-warning"></i>
+                            <a href="https://api.whatsapp.com/send/?phone=6285664578760&text&type=phone_number&app_absent=0" class="text-light text-decoration-none">0856-6457-8760</a>
+                        </p>
+                        <p class="mb-2">
+                            <i class="fas fa-clock me-2 text-warning"></i>
+                            <span class="text-light">24/7 Customer Service</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">Hubungi Kami</h5>
+                    <div class="contact-buttons">
+                        <a href="https://api.whatsapp.com/send/?phone=6285664578760&text&type=phone_number&app_absent=0" class="btn btn-success btn-lg mb-2 w-100">
+                            <i class="fab fa-whatsapp fa-lg me-2"></i>
+                            WhatsApp
+                        </a>
+                        <a href="https://www.instagram.com/onlyshinya_24" class="btn btn-danger btn-lg w-100">
+                            <i class="fab fa-instagram fa-lg me-2"></i>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0 text-light">&copy; 2025 TopUpGame. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-warning position-fixed bottom-0 end-0 m-4 d-none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Game selection function
+        function selectGame(gameName) {
+            window.location.href = "Form.html?game=" + encodeURIComponent(gameName);
+        }
+
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('d-none');
+            } else {
+                backToTopButton.classList.add('d-none');
+            }
+        });
+
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fungsi interaksi promo
+        function promoClick(promoName) {
+            let detail = '';
+            if (promoName === 'Promo WDP 3X') {
+                detail = `<b>Promo WDP 3X</b><br>Top up diamond Mobile Legends dengan harga spesial mulai Rp.25.000.<br>Bonus diamond lebih banyak!<br><br><span class='badge bg-danger'>HOT</span>`;
+            } else if (promoName === 'Promo WDP 5X') {
+                detail = `<b>Promo WDP 5X</b><br>Top up diamond Mobile Legends dengan harga spesial mulai Rp.75.000.<br>Bonus lebih besar!<br><br><span class='badge bg-warning text-dark'>POPULAR</span>`;
+            } else if (promoName === 'Promo Event') {
+                detail = `<b>Promo Event</b><br>Promo 568: Dapatkan 503+65 Bonus diamond.<br>Hanya selama event berlangsung!<br><br><span class='badge bg-info'>NEW</span>`;
+            } else if (promoName === 'Promo Recharge') {
+                detail = `<b>Promo Recharge</b><br>Bonus spesial Top Up 50%.<br>Jangan lewatkan kesempatan ini!<br><br><span class='badge bg-success'>BEST</span>`;
+            } else {
+                detail = 'Detail promo tidak ditemukan.';
+            }
+            document.getElementById('promoModalLabel').innerHTML = promoName;
+            document.getElementById('promoModalBody').innerHTML = detail;
+            var promoModal = new bootstrap.Modal(document.getElementById('promoModal'));
+            promoModal.show();
+        }
+    </script>
+
+    <!-- Modal Promo Detail -->
+    <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="promoModalLabel">Detail Promo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="promoModalBody">
+                    <!-- Isi detail promo akan diisi via JS -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

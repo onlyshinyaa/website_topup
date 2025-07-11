@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Up Game - Formulir Pembelian</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="Home.html">
+                <i class="fas fa-gamepad me-2"></i>TopUpGame
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Home.html">
+                            <i class="fas fa-home me-1"></i>Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Home.html#games">
+                            <i class="fas fa-dice me-1"></i>Games
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Form.html">
+                            <i class="fas fa-credit-card me-1"></i>Top Up
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="form-hero-section d-flex align-items-center">
+        <div class="container text-center">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="display-4 fw-bold text-warning mb-3">
+                    <i class="fas fa-credit-card me-3"></i>Top Up Game
+                </h1>
+                <p class="lead text-light fs-4">Isi formulir di bawah untuk memulai top up game favoritmu</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="card form-card border-0 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-header bg-gradient text-white text-center py-4">
+                            <h3 class="mb-0">
+                                <i class="fas fa-gamepad me-2"></i>Formulir Top Up Game
+                            </h3>
+                            <p class="mb-0 mt-2 opacity-75">Cepat, Aman, dan Terpercaya</p>
+                        </div>
+                        <div class="card-body p-5">
+                            <form id="topupForm" class="needs-validation" novalidate>
+                                <!-- Game Selection -->
+                                <div class="mb-4">
+                                    <label for="gameSelect" class="form-label fw-bold">
+                                        <i class="fas fa-dice me-2 text-primary"></i>Pilih Game
+                                    </label>
+                                    <select class="form-select form-select-lg" id="gameSelect" required>
+                                        <option value="">🎮 Pilih Game Favoritmu</option>
+                                        <option value="Mobile Legends">⚔️ Mobile Legends</option>
+                                        <option value="Wuthering Waves">🌊 Wuthering Waves</option>
+                                        <option value="Genshin Impact">🌟 Genshin Impact</option>
+                                        <option value="Honor of Kings">💠 Honor of Kings</option>
+                                        <option value="Valorant">🟥 Valorant</option>
+                                        <option value="Dota 2">🟩 Dota 2</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Silakan pilih game yang ingin di-top up
+                                    </div>
+                                </div>
+
+                                <!-- User ID -->
+                                <div class="mb-4">
+                                    <label for="userId" class="form-label fw-bold">
+                                        <i class="fas fa-user me-2 text-primary"></i>User ID
+                                    </label>
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text bg-light">
+                                            <i class="fas fa-id-card text-muted"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="userId" 
+                                               placeholder="Masukkan User ID (hanya angka)" 
+                                               pattern="[0-9]+" required>
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        User ID harus berupa angka
+                                    </div>
+                                    <small class="form-text text-muted">
+                                        <i class="fas fa-info-circle me-1"></i>
+                                        User ID dapat ditemukan di profil game Anda
+                                    </small>
+                                </div>
+
+                                <!-- Server ID -->
+                                <div class="mb-4" id="serverIdGroup">
+                                    <label for="serverId" class="form-label fw-bold" id="serverIdLabel">
+                                        <i class="fas fa-server me-2 text-primary"></i>Server ID
+                                    </label>
+                                    <div id="serverIdInputGroup">
+                                        <div class="input-group input-group-lg" id="serverIdInputTextGroup">
+                                            <span class="input-group-text bg-light">
+                                                <i class="fas fa-network-wired text-muted"></i>
+                                            </span>
+                                            <input type="text" class="form-control" id="serverId" 
+                                                   placeholder="Masukkan Server ID (hanya angka)" 
+                                                   pattern="[0-9]+" required>
+                                        </div>
+                                        <select class="form-select form-select-lg d-none mt-2" id="serverSelect"></select>
+                                    </div>
+                                    <div class="invalid-feedback" id="serverIdInvalid">
+                                        Server ID harus berupa angka
+                                    </div>
+                                    <small class="form-text text-muted" id="serverIdHelp">
+                                        <i class="fas fa-info-circle me-1"></i>
+                                        Server ID dapat ditemukan di pengaturan game
+                                    </small>
+                                </div>
+
+                                <!-- Nominal Selection -->
+                                <div class="mb-4">
+                                    <label for="nominal" class="form-label fw-bold">
+                                        <i class="fas fa-coins me-2 text-primary"></i>Nominal Top Up
+                                    </label>
+                                    <select class="form-select form-select-lg" id="nominal" required>
+                                        <!-- Opsi akan diisi via JS -->
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Silakan pilih nominal top up
+                                    </div>
+                                </div>
+
+                                <!-- Payment Method -->
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">
+                                        <i class="fas fa-credit-card me-2 text-primary"></i>Metode Pembayaran
+                                    </label>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="payment-method-card">
+                                                <input type="radio" class="btn-check" name="paymentMethod" id="dana" value="DANA" checked>
+                                                <label class="btn btn-outline-primary w-100 py-3" for="dana">
+                                                    <i class="fas fa-wallet fa-2x mb-2"></i>
+                                                    <br>DANA
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="payment-method-card">
+                                                <input type="radio" class="btn-check" name="paymentMethod" id="ovo" value="OVO">
+                                                <label class="btn btn-outline-primary w-100 py-3" for="ovo">
+                                                    <i class="fas fa-mobile-alt fa-2x mb-2"></i>
+                                                    <br>OVO
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="payment-method-card">
+                                                <input type="radio" class="btn-check" name="paymentMethod" id="seabank" value="SeaBank">
+                                                <label class="btn btn-outline-primary w-100 py-3" for="seabank">
+                                                    <i class="fas fa-university fa-2x mb-2"></i>
+                                                    <br>SeaBank
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="payment-method-card">
+                                                <input type="radio" class="btn-check" name="paymentMethod" id="shopeepay" value="ShopeePay">
+                                                <label class="btn btn-outline-primary w-100 py-3" for="shopeepay">
+                                                    <i class="fas fa-shopping-bag fa-2x mb-2"></i>
+                                                    <br>ShopeePay
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Summary -->
+                                <div class="mb-4 p-4 bg-light rounded">
+                                    <h6 class="fw-bold mb-3">
+                                        <i class="fas fa-receipt me-2 text-primary"></i>Ringkasan Pesanan
+                                    </h6>
+                                    <div id="orderSummary" class="text-muted">
+                                        Pilih game dan nominal untuk melihat ringkasan
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-warning btn-lg py-3 fw-bold" id="submitBtn">
+                                        <i class="fas fa-rocket me-2"></i>Proses Top Up Sekarang
+                                    </button>
+                                    <button type="button" class="btn btn-outline-secondary" onclick="window.history.back()">
+                                        <i class="fas fa-arrow-left me-2"></i>Kembali
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-bolt fa-3x text-warning"></i>
+                    </div>
+                    <h5 class="text-white mb-3">Proses Cepat</h5>
+                    <p class="text-light">Top up diproses dalam waktu 1-5 menit setelah pembayaran berhasil</p>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-shield-alt fa-3x text-warning"></i>
+                    </div>
+                    <h5 class="text-white mb-3">100% Aman</h5>
+                    <p class="text-light">Transaksi aman dengan sistem keamanan terpercaya</p>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-headset fa-3x text-warning"></i>
+                    </div>
+                    <h5 class="text-white mb-3">24/7 Support</h5>
+                    <p class="text-light">Customer service siap membantu Anda kapan saja</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-gamepad me-2 text-warning"></i>TopUpGame
+                    </h5>
+                    <p class="text-light">Platform Top Up Game Online Terpercaya Di Indonesia dengan pelayanan 24/7 dan harga termurah.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-warning me-3 fs-4"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-warning me-3 fs-4"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-warning me-3 fs-4"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">Kontak Kami</h5>
+                    <div class="contact-info">
+                        <p class="mb-2">
+                            <i class="fas fa-envelope me-2 text-warning"></i>
+                            <a href="mailto:Sanzguh21@gmail.com" class="text-light text-decoration-none">Sanzguh21@gmail.com</a>
+                        </p>
+                        <p class="mb-2">
+                            <i class="fab fa-whatsapp me-2 text-warning"></i>
+                            <a href="https://api.whatsapp.com/send/?phone=6285664578760&text&type=phone_number&app_absent=0" class="text-light text-decoration-none">0856-6457-8760</a>
+                        </p>
+                        <p class="mb-2">
+                            <i class="fas fa-clock me-2 text-warning"></i>
+                            <span class="text-light">24/7 Customer Service</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">Hubungi Kami</h5>
+                    <div class="contact-buttons">
+                        <a href="https://api.whatsapp.com/send/?phone=6285664578760&text&type=phone_number&app_absent=0" class="btn btn-success btn-lg mb-2 w-100">
+                            <img src="wa_png.png" style="width: 30px; height: 30px;" class="me-2">
+                            WhatsApp
+                        </a>
+                        <a href="https://www.instagram.com/onlyshinya_24" class="btn btn-danger btn-lg w-100">
+                            <img src="Instagram_logo png.png" style="width: 30px; height: 30px;" class="me-2">
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0 text-light">&copy; 2025 TopUpGame. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedGame = urlParams.get('game');
+        
+        if (selectedGame) {
+            document.getElementById('gameSelect').value = selectedGame;
+            updateNominalOptions();
+            updateOrderSummary();
+            updateServerIdVisibility();
+        }
+
+        // Update order summary
+        function updateOrderSummary() {
+            const gameSelect = document.getElementById('gameSelect');
+            const nominalSelect = document.getElementById('nominal');
+            const summaryDiv = document.getElementById('orderSummary');
+            
+            if (gameSelect.value && nominalSelect.value) {
+                const game = gameSelect.value;
+                const nominal = parseInt(nominalSelect.value);
+                const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+                
+                summaryDiv.innerHTML = `
+                    <div class="row">
+                        <div class="col-6">
+                            <strong>Game:</strong><br>
+                            <strong>Nominal:</strong><br>
+                            <strong>Metode Pembayaran:</strong><br>
+                            <strong>Total:</strong>
+                        </div>
+                        <div class="col-6">
+                            ${game}<br>
+                            Rp ${nominal.toLocaleString('id-ID')}<br>
+                            ${paymentMethod}<br>
+                            <span class="text-primary fw-bold">Rp ${nominal.toLocaleString('id-ID')}</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                summaryDiv.innerHTML = 'Pilih game dan nominal untuk melihat ringkasan';
+            }
+        }
+
+        // Event listeners
+        document.getElementById('gameSelect').addEventListener('change', function() {
+            updateNominalOptions();
+            updateOrderSummary();
+            updateServerIdVisibility();
+        });
+        document.getElementById('nominal').addEventListener('change', updateOrderSummary);
+        document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+            radio.addEventListener('change', updateOrderSummary);
+        });
+
+        // Form validation and submission
+        document.getElementById('topupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!this.checkValidity()) {
+                e.stopPropagation();
+                this.classList.add('was-validated');
+                return;
+            }
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Memproses...';
+            submitBtn.disabled = true;
+            
+            // Simulate processing
+            setTimeout(() => {
+                const game = document.getElementById('gameSelect').value;
+                const userId = document.getElementById('userId').value;
+                const serverId = document.getElementById('serverId').value;
+                const nominal = document.getElementById('nominal').value;
+                const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+                
+                // Create WhatsApp message
+                const message = `Halo Admin, saya ingin top up:
+
+🎮 Game: ${game}
+🆔 User ID: ${userId}
+🌐 Server ID: ${serverId}
+💰 Nominal: Rp ${parseInt(nominal).toLocaleString('id-ID')}
+💳 Metode Pembayaran: ${paymentMethod}
+
+Mohon diproses segera, terima kasih!`;
+                
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=6285664578760&text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+                
+                // Reset form
+                this.reset();
+                this.classList.remove('was-validated');
+                updateOrderSummary();
+                
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Show success message
+                showNotification('Formulir berhasil dikirim! Silakan cek WhatsApp Anda.', 'success');
+            }, 2000);
+        });
+
+        // Add ripple effect to buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        const nominalOptions = {
+            'Mobile Legends': [
+                { value: '25000', label: '💎 Rp 25.000 (Diamond 86)' },
+                { value: '50000', label: '💎 Rp 50.000 (Diamond 172)' },
+                { value: '100000', label: '💎 Rp 100.000 (Diamond 344)' },
+                { value: '150000', label: '💎 Rp 150.000 (Diamond 516)' },
+                { value: '200000', label: '💎 Rp 200.000 (Diamond 688)' },
+                { value: '500000', label: '💎 Rp 500.000 (Diamond 1720)' }
+            ],
+            'Genshin Impact': [
+                { value: '25000', label: '🔷 Rp 25.000 (Crystals 60)' },
+                { value: '50000', label: '🔷 Rp 50.000 (Crystals 120)' },
+                { value: '100000', label: '🔷 Rp 100.000 (Crystals 300)' },
+                { value: '150000', label: '🔷 Rp 150.000 (Crystals 500)' },
+                { value: '200000', label: '🔷 Rp 200.000 (Crystals 980)' },
+                { value: '500000', label: '🔷 Rp 500.000 (Crystals 1980)' }
+            ],
+            'Wuthering Waves': [
+                { value: '25000', label: '🌙 Rp 25.000 (Lunite 60)' },
+                { value: '50000', label: '🌙 Rp 50.000 (Lunite 120)' },
+                { value: '100000', label: '🌙 Rp 100.000 (Lunite 300)' },
+                { value: '150000', label: '🌙 Rp 150.000 (Lunite 500)' },
+                { value: '200000', label: '🌙 Rp 200.000 (Lunite 980)' },
+                { value: '500000', label: '🌙 Rp 500.000 (Lunite 1980)' }
+            ],
+            'HOK': [
+                { value: '25000', label: '💠 Rp 25.000 (Diamond 86)' },
+                { value: '50000', label: '💠 Rp 50.000 (Diamond 172)' },
+                { value: '100000', label: '💠 Rp 100.000 (Diamond 344)' },
+                { value: '150000', label: '💠 Rp 150.000 (Diamond 516)' },
+                { value: '200000', label: '💠 Rp 200.000 (Diamond 688)' },
+                { value: '500000', label: '💠 Rp 500.000 (Diamond 1720)' }
+            ],
+            'Valorant': [
+                { value: '25000', label: '🟥 Rp 25.000 (VP 125)' },
+                { value: '50000', label: '🟥 Rp 50.000 (VP 250)' },
+                { value: '100000', label: '🟥 Rp 100.000 (VP 500)' },
+                { value: '150000', label: '🟥 Rp 150.000 (VP 750)' },
+                { value: '200000', label: '🟥 Rp 200.000 (VP 1000)' },
+                { value: '500000', label: '🟥 Rp 500.000 (VP 2500)' }
+            ],
+            'Dota 2': [
+                { value: '25000', label: '🟩 Rp 25.000 (Dota Plus 1 Bulan)' },
+                { value: '50000', label: '🟩 Rp 50.000 (Dota Plus 2 Bulan)' },
+                { value: '100000', label: '🟩 Rp 100.000 (Dota Plus 5 Bulan)' },
+                { value: '150000', label: '🟩 Rp 150.000 (Dota Plus 8 Bulan)' },
+                { value: '200000', label: '🟩 Rp 200.000 (Dota Plus 12 Bulan)' }
+            ]
+        };
+
+        function updateNominalOptions() {
+            const game = document.getElementById('gameSelect').value;
+            const nominalSelect = document.getElementById('nominal');
+            nominalSelect.innerHTML = '';
+            const defaultOpt = document.createElement('option');
+            defaultOpt.value = '';
+            defaultOpt.textContent = 'Pilih Nominal';
+            nominalSelect.appendChild(defaultOpt);
+            if (nominalOptions[game]) {
+                nominalOptions[game].forEach(opt => {
+                    const o = document.createElement('option');
+                    o.value = opt.value;
+                    o.textContent = opt.label;
+                    nominalSelect.appendChild(o);
+                });
+            }
+        }
+
+        function updateServerIdVisibility() {
+            const game = document.getElementById('gameSelect').value;
+            const serverIdGroup = document.getElementById('serverIdGroup');
+            const serverIdInput = document.getElementById('serverId');
+            const serverIdInputTextGroup = document.getElementById('serverIdInputTextGroup');
+            const serverSelect = document.getElementById('serverSelect');
+            const serverIdInvalid = document.getElementById('serverIdInvalid');
+            const serverIdHelp = document.getElementById('serverIdHelp');
+            if (game === 'Genshin Impact') {
+                serverIdGroup.style.display = '';
+                serverIdInputTextGroup.style.display = 'none';
+                serverSelect.classList.remove('d-none');
+                serverSelect.innerHTML = '';
+                ['America','Asia','Europa','TW','HK','MO'].forEach(opt => {
+                    const o = document.createElement('option');
+                    o.value = opt;
+                    o.textContent = opt;
+                    serverSelect.appendChild(o);
+                });
+                serverSelect.required = true;
+                serverIdInput.required = false;
+                serverIdInput.value = '';
+                serverIdInvalid.style.display = 'none';
+                serverIdHelp.textContent = 'Pilih server sesuai akun Genshin Impact Anda';
+            } else if (game === 'Wuthering Waves') {
+                serverIdGroup.style.display = '';
+                serverIdInputTextGroup.style.display = 'none';
+                serverSelect.classList.remove('d-none');
+                serverSelect.innerHTML = '';
+                ['Asia','Eropa','Amerika','HMT (Hong Kong, Macao, Taiwan)','SEA (Asia Tenggara)'].forEach(opt => {
+                    const o = document.createElement('option');
+                    o.value = opt;
+                    o.textContent = opt;
+                    serverSelect.appendChild(o);
+                });
+                serverSelect.required = true;
+                serverIdInput.required = false;
+                serverIdInput.value = '';
+                serverIdInvalid.style.display = 'none';
+                serverIdHelp.textContent = 'Pilih server sesuai akun Wuthering Waves Anda';
+            } else if (game === 'Mobile Legends' || game === 'HOK' || game === 'Valorant' || game === 'Dota 2') {
+                serverIdGroup.style.display = '';
+                serverIdInputTextGroup.style.display = '';
+                serverSelect.classList.add('d-none');
+                serverSelect.required = false;
+                serverIdInput.required = true;
+                serverIdInvalid.style.display = '';
+                serverIdHelp.textContent = 'Server ID dapat ditemukan di pengaturan game';
+            } else {
+                serverIdGroup.style.display = '';
+                serverIdInputTextGroup.style.display = '';
+                serverSelect.classList.add('d-none');
+                serverSelect.required = false;
+                serverIdInput.required = true;
+                serverIdInvalid.style.display = '';
+                serverIdHelp.textContent = 'Server ID dapat ditemukan di pengaturan game';
+            }
+        }
+
+        // Inisialisasi awal
+        updateNominalOptions();
+        updateServerIdVisibility();
+    </script>
+</body>
+</html>
